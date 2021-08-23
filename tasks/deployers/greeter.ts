@@ -12,7 +12,7 @@ task("deploy:Greeter")
 
     if (verify) {
       // We need to wait a little bit to verify the contract after deployment
-      void delay(30000);
+      await delay(30000);
       await hre.run("verify:verify", {
         address: greeter.address,
         constructorArguments: [greeting],
