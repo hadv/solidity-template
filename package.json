@@ -67,9 +67,9 @@
     "@solidity-parser/parser": "^0.13.2"
   },
   "scripts": {
-    "clean": "hardhat clean",
+    "clean": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat clean",
     "commit": "git-cz",
-    "compile": "SKIP_LOAD=true hardhat compile",
+    "compile": "cross-env TS_NODE_TRANSPILE_ONLY=true hardhat compile",
     "coverage": "cross-env CODE_COVERAGE=true hardhat coverage --solcoverjs ./.solcover.js --temp artifacts --testfiles \"./test/**/*.ts\"",
     "deploy": "hardhat deploy:Greeter",
     "lint": "yarn run lint:sol && yarn run lint:ts && yarn run prettier:check",
